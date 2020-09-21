@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript kalkulator</h2>
+<label>Broj 1:</label>
+<input type="text" id="broj1" size="5"><br><br>
+<label>Broj 2:</label>
+<input type="text" id="broj2" size="5"><br><br>
+<label>Izaberi ra&#269;unsku operaciju:</label><br><br>
+<select id="operacija" name="operacija" size="4">
+<option value="sabiranje" selected>Sabiranje</option>
+<option value="oduzimanje">Oduzimanje</option>
+<option value="mnozenje">Mnozenje</option>
+<option value="deljenje">Deljenje</option>
+
+</select>
+<br><br>
+<button type="button" onclick="Kalkulator()">Izra&#269;unaj</button>
+<br><br>
+<!-- <p id="rezultat"></p> -->
+<label id="rezultat">Rezultat:</label>
+
+<script>
+function Kalkulator() {
+	var broj1=Number(document.getElementById("broj1").value);
+  	var broj2=Number(document.getElementById("broj2").value);
+  	var operacija=document.getElementById("operacija").value;
+  	var rezultat=0;
+  	
+	switch (operacija) {
+  		case "sabiranje":
+    		rezultat=broj1 + broj2;
+    		break;
+  		case "oduzimanje":
+     		rezultat=broj1-broj2;
+    		break;
+ 		case "mnozenje":
+     		rezultat=broj1*broj2;
+    		break;
+		case "deljenje":
+    		rezultat=broj1/broj2;
+    		break;
+	}
+
+	document.getElementById("rezultat").innerHTML = "Rezultat: " + rezultat;
+	//document.getElementById("proba").innerHTML = "Rezultat: " + String(rezultat);
+}
+</script>
+
+</body>
+
+</html>
+
